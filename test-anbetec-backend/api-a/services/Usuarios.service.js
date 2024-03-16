@@ -13,7 +13,7 @@ class UsuarioService {
 
     }
 
-    async findById(id){
+    async findByName(id){
         return await this.Usuario.findByPk(id);
     }
 

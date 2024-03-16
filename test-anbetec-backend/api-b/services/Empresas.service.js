@@ -34,6 +34,8 @@ class EmpresaService {
   // Funcionalidade adicional: buscar usuários por empresa
   async findUsuariosByEmpresa(id) {
 
+    console.log(`Buscando usuários para a empresa com id ${id}`);
+
     try {
       const response = await axios.get('http://localhost:3001/usuarios');
       const usuarios = response.data;
