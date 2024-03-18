@@ -27,7 +27,7 @@ class UsuarioController {
         const nome = req.params.nome;
 
         try {
-            const usuario = await this.usuarioService.findById(nome);
+            const usuario = await this.usuarioService.findByName(nome);
 
             if (!usuario) {
                 return res.status(404).json({ error: 'Usuário não encontrado' });

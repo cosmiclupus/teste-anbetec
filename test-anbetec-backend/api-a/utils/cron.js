@@ -6,7 +6,6 @@ require('dotenv').config();
 // Substitua '2' pelo idempresa que você deseja usar
 const id = '2';
 
-// Substitua 'http://localhost:3000/empresas' pelo URL da API B
 const apiBUrl = `http://localhost:3000/empresas/2/usuarios`;
 
 let counter = 0;

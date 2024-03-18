@@ -101,7 +101,7 @@ class EmpresaController {
 
   async obterUsuariosDaEmpresa(req, res) {
     const { id } = req.params;
-
+    console.log(`Buscando usuários para a empresa com id ${id}`)
     try {
       const usuarios = await this.empresaService.findUsuariosByEmpresa(id);
       if (!usuarios) {
