@@ -14,7 +14,7 @@ const app = express();
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
-      title: 'API A (Usuários',
+      title: 'API A (Usuários)',
       description: 'Descrição da API A',
       contact: {
         name: 'Developer'
@@ -36,7 +36,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use('/', usuarioRoutes);
 
-// Error handling middleware (optional)
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Internal Server Error' });
@@ -49,4 +48,4 @@ app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
     });
 
-//retornaUsuariosPorIdEmpresaPorSegundo();
+retornaUsuariosPorIdEmpresaPorSegundo();

@@ -1,12 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser'); // Required for parsing request body data (usually JSON)
-const cors = require('cors'); // Optional for enabling CORS
+const bodyParser = require('body-parser'); 
+const cors = require('cors'); 
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
-// Import the controller and routes
+
 const empresaController = require('./controllers/Empresas.controllers');
-const empresaRoutes = require('./routes/Empresas.routes'); // Assuming routes.js defines the routes
+const empresaRoutes = require('./routes/Empresas.routes'); 
 
 const app = express();
 
@@ -26,13 +26,12 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
-// Middleware
-app.use(cors()); // Enable CORS if needed
-app.use(bodyParser.json()); // Parse incoming JSON data
+
+app.use(cors());
+app.use(bodyParser.json()); 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use('/', empresaRoutes); 
 
-// Error handling middleware (optional)
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Internal Server Error' });

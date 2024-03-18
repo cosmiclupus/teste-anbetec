@@ -10,7 +10,7 @@ function authenticateToken(req, res, next) {
   console.log('token:', token);
   if (token == null || token == '') return res.sendStatus(401);
   
-  console.log('Acess Token Secret:', process.env.ACCESS_TOKEN_SECRET)
+  console.log('Access Token Secret:', process.env.ACCESS_TOKEN_SECRET)
 
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
     if (err) {
@@ -18,6 +18,7 @@ function authenticateToken(req, res, next) {
       return res.sendStatus(403);
     }
     req.user = user;
+    console.log('Passou!!!!!!!!')
     next();
   });
 
